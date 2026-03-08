@@ -9,13 +9,22 @@
 
 template<class T>
 class Circle : public Shape2D<T> {
+<<<<<<< HEAD
 public:
     inline ShapeResultData<T> compute();
     inline std::string print();
     inline Circle(const ShapeParam<T>& param);
+=======
+  public:
+    inline ShapeResultData<T> compute();
+    inline std::string print();
+    inline Circle(const ShapeParam<T>& param);
+
+>>>>>>> origin/main
 };
 
 template<class T>
+<<<<<<< HEAD
 inline ShapeResultData<T> Circle<T>::compute() {
     T radius = this->m_param.get(PARAM_RADIUS);
     const double PI = 3.14159265358979323846;
@@ -30,6 +39,22 @@ inline ShapeResultData<T> Circle<T>::compute() {
     result.set(RESULT_PERIMETER, static_cast<T>(perimeter));
 
     return result;
+=======
+inline ShapeResult<T> Circle<T>::compute() {
+   T radius = this->m_param.get(PARAM_RADIUS);
+    const double PI = 3.14159265358979323846;
+    
+    // Obliczenia na typie double dla precyzji
+    double area = PI * static_cast<double>(radius) * static_cast<double>(radius);
+    double perimeter = 2.0 * PI * static_cast<double>(radius);
+
+    // Pakowanie wynikow do obiektu ShapeResultData
+    ShapeResultData<T> result;
+    result.set(RESULT_AREA, static_cast<T>(area));
+    result.set(RESULT_PERIMETER, static_cast<T>(perimeter));
+
+    return result;
+>>>>>>> origin/main
 }
 
 template<class T>
