@@ -26,13 +26,13 @@ inline ShapeResult<T> Hexagon<T>::compute() {
 
     ShapeResult<T> result;
 
-    T a = this->m_param.get(PARAM_RADIUS);
+    T a = this->m_param.get_attrib(PARAM_RADIUS);
 
     T area = (3 * sqrt(3) * a * a) / 2;
     T perimeter = 6 * a;
 
-    result.set(RESULT_AREA, area);
-    result.set(RESULT_PERIMETER, perimeter);
+    result.set_attrib(RESULT_AREA, area);
+    result.set_attrib(RESULT_PERIMETER, perimeter);
 
     return result;
 }
