@@ -43,7 +43,7 @@ template <class T> inline ShapeResult<T> Torus<T>::compute()
 
     if (!isfinite(volume) || !isfinite(surface))
     {
-        throw std::overflow_error("Numeric overflow during torus computation");
+        throw overflow_error("Numeric overflow during torus computation");
     }
 
     result.set_attrib(RESULT_VOLUME, volume);

@@ -2,7 +2,6 @@
 #include <cmath>
 #include <gtest/gtest.h>
 #include "ShapeFactory.h"
-#include <stdexcept>
 
 TEST(test_shape1, AddFunction)
 {
