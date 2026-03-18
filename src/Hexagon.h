@@ -30,7 +30,15 @@ template <class T> inline ShapeResult<T> Hexagon<T>::compute()
     return result;
 }
 
-template <class T> inline string Hexagon<T>::print() { return "Hexagon"; }
+template <class T> inline string Hexagon<T>::print()
+{
+    ShapeResult<T> result = compute();
+    T area = result.get_attrib(RESULT_AREA);
+    T perimeter = result.get_attrib(RESULT_PERIMETER);
+
+    return "Hexagon | area: " + to_string(area)
+        + ", perimeter: " + to_string(perimeter);
+}
 
 template <class T>
 inline Hexagon<T>::Hexagon(const ShapeParam<T>& param): Shape2D<T>(param)
