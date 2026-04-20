@@ -38,10 +38,17 @@ target_link_libraries(test_shape1 gtest gtest_main ShapeLib)
 target_include_directories(test_shape1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src PRIVATE ${PROJECT_BINARY_DIR})
 
 add_test(NAME test_shape1 COMMAND test_shape1)
+#add_test(NAME test_shape2 COMMAND test_shape2)
 
 # ===== TEST 2 (TRIANGLE) =====
 add_executable(test_triangle src/tests/smoke/test_triangle.cpp)
 target_link_libraries(test_triangle gtest gtest_main ShapeLib)
 target_include_directories(test_triangle PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src PRIVATE ${PROJECT_BINARY_DIR})
-
 add_test(NAME test_triangle COMMAND test_triangle)
+
+
+#  Testy dla Elipsy 
+add_executable(test_ellipse src/tests/smoke/ellipse_test.cpp)
+target_link_libraries(test_ellipse gtest gtest_main ShapeLib)
+target_include_directories(test_ellipse PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src  PRIVATE ${PROJECT_BINARY_DIR})
+add_test(NAME test_ellipse COMMAND test_ellipse)
