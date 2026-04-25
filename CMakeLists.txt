@@ -46,6 +46,11 @@ target_link_libraries(test_torus gtest gtest_main ShapeLib)
 target_include_directories(test_torus PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src  PRIVATE ${PROJECT_BINARY_DIR})
 add_test(NAME test_torus COMMAND test_torus)
 
+add_executable(test_rectangle src/tests/smoke/test_rectangle.cpp)
+target_link_libraries(test_rectangle gtest gtest_main ShapeLib)
+target_include_directories(test_rectangle PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src  PRIVATE ${PROJECT_BINARY_DIR})
+add_test(NAME test_rectangle COMMAND test_rectangle)
+
 
 add_executable(test_trapeze src/tests/smoke/test_trapeze.cpp)
 target_link_libraries(test_trapeze gtest gtest_main ShapeLib)
