@@ -69,7 +69,7 @@ TEST(test_trapeze, PerformanceUnder1ms)
     Trapeze<float> trapeze(param);
 
     // Warm-up (important!)
-    for (int i = 0; i < 1000; ++i) 
+    for (int i = 0; i < 1000; ++i)
     {
         trapeze.compute();
     }
@@ -80,7 +80,7 @@ TEST(test_trapeze, PerformanceUnder1ms)
 
     auto start = std::chrono::high_resolution_clock::now();
 
-    for (int i = 0; i < iterations; ++i) 
+    for (int i = 0; i < iterations; ++i)
     {
         sink += trapeze.compute().get_attrib(RESULT_AREA);
     }
@@ -91,4 +91,5 @@ TEST(test_trapeze, PerformanceUnder1ms)
 
     // 1 ms = 1000 microseconds
     ASSERT_LT(duration.count(), 1000);
+
 }
