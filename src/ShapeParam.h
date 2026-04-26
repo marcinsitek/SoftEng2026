@@ -43,11 +43,8 @@ template <class T> inline bool ShapeParam<T>::validate() const
     T depth = get_attrib(PARAM_DEPTH);
     T height = get_attrib(PARAM_HEIGHT);
 
-
     return (width > static_cast<T>(0)) && (depth > static_cast<T>(0))
         && (height > static_cast<T>(0));
-
-
 }
 
 #endif
