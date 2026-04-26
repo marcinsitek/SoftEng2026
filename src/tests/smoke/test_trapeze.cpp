@@ -85,7 +85,7 @@ TEST(test_trapeze, PerformanceUnder1ms)
 
     auto end = std::chrono::high_resolution_clock::now();
 
-    auto duration = 
+    auto duration =
         std::chrono::duration_cast<std::chrono::microseconds>(end - start);
 
     // 1 ms = 1000 microseconds
