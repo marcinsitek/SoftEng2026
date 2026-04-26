@@ -42,8 +42,7 @@ TEST(test_trapeze, NegativeValues)
     param.set_attrib(PARAM_DEPTH, 5.f);
     param.set_attrib(PARAM_HEIGHT, 2.f);
 
-    res = param.validate();
-    ASSERT_NE(res, false);
+    ASSERT_FALSE(param.validate());
 }
 
 TEST(test_trapeze, ValuesEqualZero)
@@ -54,8 +53,7 @@ TEST(test_trapeze, ValuesEqualZero)
     param.set_attrib(PARAM_DEPTH, 5.f);
     param.set_attrib(PARAM_HEIGHT, 2.f);
 
-    res = param.validate();
-    ASSERT_NE(res, false);
+    ASSERT_FALSE(param.validate());
 }
 
 
@@ -91,5 +89,4 @@ TEST(test_trapeze, PerformanceUnder1ms)
 
     // 1 ms = 1000 microseconds
     ASSERT_LT(duration.count(), 1000);
-
 }
